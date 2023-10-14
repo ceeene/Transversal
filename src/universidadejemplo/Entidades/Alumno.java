@@ -13,6 +13,7 @@ import java.time.LocalDate;
  */
 public class Alumno {
     int idAlumno;
+    int dni; 
     String apellido;
     String nombre;
     LocalDate fechaNacimiento;
@@ -21,29 +22,43 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(int idAlumno, String apellido, String nombre, LocalDate fechaNacimiento, boolean activo) {
+    public Alumno(int idAlumno, int dni, String apellido, String nombre, LocalDate fechaNacimiento, boolean activo) {
         this.idAlumno = idAlumno;
+        this.dni=dni; 
         this.apellido = apellido;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.activo = activo;
     }
 
-    public Alumno(String apellido, String nombre, LocalDate fechaNacimiento, boolean activo) {
+    public Alumno(int dni, String apellido, String nombre, LocalDate fechaNacimiento, boolean activo) {
+        this.dni=dni; 
         this.apellido = apellido;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.activo = activo;
     }
+
+    
+    
 
     public int getIdAlumno() {
         return idAlumno;
+    }
+    
+    public int getDni() {
+        return dni;
     }
 
     public void setIdAlumno(int idAlumno) {
         this.idAlumno = idAlumno;
     }
 
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+    
+    
     public String getApellido() {
         return apellido;
     }
@@ -78,7 +93,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "idAlumno=" + idAlumno + ", apellido=" + apellido + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", activo=" + activo + '}';
+        return "Alumno{" + "idAlumno=" + idAlumno + ", dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre +'}';
     }
     
     
