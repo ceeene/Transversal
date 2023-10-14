@@ -5,18 +5,11 @@
  */
 package universidadejemplo.AccesoADatos;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-/**
- *
- * @author Celia
- */
+
 public class Transversal {
 
     
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws ClassNotFoundException {
         /*try {
 //cargamos driver de conexion
             Class.forName("org.mariadb.jdbc.Driver");
