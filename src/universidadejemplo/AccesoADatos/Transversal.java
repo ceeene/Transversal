@@ -17,7 +17,7 @@ public class Transversal {
 
     
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        try {
+        /*try {
 //cargamos driver de conexion
             Class.forName("org.mariadb.jdbc.Driver");
             
@@ -68,18 +68,19 @@ public class Transversal {
             
     
     
-         } catch (ClassNotFoundException ex) {
+       /*  } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null,"Error al cargar Driver");
         } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null, "Error de conexion");
            System.out.println("Codigo de error "+ex.getErrorCode());
-        }
+        }*/
     }
     
     
  
     
-}
+ }
+
     
     
 
