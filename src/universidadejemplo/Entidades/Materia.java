@@ -10,10 +10,10 @@ package universidadejemplo.Entidades;
  * @author Celia
  */
 public class Materia {
-    int idMateria;
-    String asignatura;
-    int anio;
-    boolean activo;
+    private int idMateria;
+    private String asignatura;
+    private int anio;
+    private boolean activo;
 
     public Materia(int idMateria, String asignatura, int anio, boolean activo) {
         this.idMateria = idMateria;

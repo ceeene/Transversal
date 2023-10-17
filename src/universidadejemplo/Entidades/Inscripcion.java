@@ -10,10 +10,10 @@ package universidadejemplo.Entidades;
  * @author Celia
  */
 public class Inscripcion {
-     int idInscripcion;
-    Alumno alumno;
-    Materia materia;
-    double nota;
+     private int idInscripcion;
+     private Alumno alumno;
+     private Materia materia;
+     private double nota;
 
     public Inscripcion(int idInscripcion, Alumno alumno, Materia materia, double nota) {
         this.idInscripcion = idInscripcion;
@@ -65,6 +65,13 @@ public class Inscripcion {
 
     public void setNota(double nota) {
         this.nota = nota;
+    }
+
+    @Override
+    public String toString() {
+        String inscrip=idInscripcion+" "+alumno.getApellido()+", "+alumno.getNombre()+" "+materia.getAsignatura();
+        
+        return inscrip;
     }
     
 }
