@@ -6,7 +6,9 @@ import java.time.LocalDate;
 import java.time.Month;
 import universidadejemplo.AccesoADatos.AlumnoData;
 import universidadejemplo.AccesoADatos.Conexion;
+import universidadejemplo.AccesoADatos.MateriaData;
 import universidadejemplo.Entidades.Alumno;
+import universidadejemplo.Entidades.Materia;
 
 
 public class Universidad {
@@ -20,6 +22,11 @@ public class Universidad {
      AlumnoData alu=new AlumnoData(); 
      alu.guadarAlumno(pedro);
        
+     Materia mat=new Materia("matematica",2023, true);
+     MateriaData matt= new MateriaData();
+     matt.guadarMateria(mat);
+     
+     
     }
     
 }
