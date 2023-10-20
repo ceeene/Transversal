@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package universidadejemplo.AccesoADatos;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.*;
 import javax.swing.JOptionPane;
 import universidadejemplo.Entidades.Inscripcion;
 
@@ -33,7 +24,8 @@ public class InscripcionData {
             ps.setInt(2,insc.getMateria().getIdMateria());
             ps.setDouble(3, insc.getNota());
             ps.executeUpdate();
-            Resulset rs=(Resulset) ps.getGeneratedKeys();
+            
+            ResultSet rs=ps.getGeneratedKeys();
             if(rs.next());
             
             insc.setIdInscripcion(rs.getInt(1));
