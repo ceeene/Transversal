@@ -1,14 +1,12 @@
 
 package universidadejemplo.AccesoADatos;
 
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import universidadejemplo.Entidades.Alumno;
 
@@ -21,7 +19,7 @@ public class AlumnoData {
  con = Conexion.getConnection();
  
  }
- public void guadarAlumno(Alumno alumno){
+ public void guardarAlumno(Alumno alumno){
      String sql="INSERT INTO alumno(dni, apellido, nombre, fechaNacimiento, estado)"
              + "VALUES(?, ?, ?, ?, ?)"; 
      
@@ -36,7 +34,7 @@ public class AlumnoData {
             
             ResultSet rs=ps.getGeneratedKeys(); 
             if(rs.next()){
-                alumno.setIdAlumno(rs.getInt(1)); ; 
+                alumno.setIdAlumno(rs.getInt(1)); 
                 JOptionPane.showMessageDialog(null, "Alumno agregado exitosamente");
                 
             }
@@ -48,5 +46,26 @@ public class AlumnoData {
             System.out.println(ex.getMessage());
             System.out.println("Codigo de error "+ex.getErrorCode());
         } 
+        
+        
  } 
+  
+ /*REVISAR, NO ENCUENTRO EL ERROR
+ public void eliminarAlumno(Alumno alumno) throws SQLException{
+    
+         String sql1= "UPDATE alumno SET estado= 0 WHERE idAlumno= ? ";
+         try (PreparedStatement pss = con.prepareStatement(sql1)) {
+             pss.setInt(1, alumno);
+             int fila=pss.executeUpdate();
+             
+             if(fila==1){
+                 JOptionPane.showMessageDialog(null, "Alumno eliminado");
+             }
+         }
+     }catch (SQLException e){
+         JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno");
+     }
+ }*/
+ 
+ 
 }

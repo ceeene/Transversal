@@ -26,13 +26,13 @@ public class InscripcionData {
             ps.executeUpdate();
             
             ResultSet rs=ps.getGeneratedKeys();
-            if(rs.next());
+            if(rs.next());{
             
             insc.setIdInscripcion(rs.getInt(1));
             JOptionPane.showMessageDialog(null,"Inscripcion Registrada");
             
-            
-            
+        }
+           ps.close(); 
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion");

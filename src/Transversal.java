@@ -1,6 +1,8 @@
 
 import java.sql.*;
 import javax.swing.JOptionPane;
+import universidadejemplo.AccesoADatos.MateriaData;
+import universidadejemplo.Entidades.Materia;
 
 
 
@@ -23,14 +25,16 @@ public class Transversal {
             
             
             //cargamos alumnos
-        /*String sql="INSERT INTO alumno (dni, apellido, nombre, fechaNacimiento, estado)"
-            + "VALUES (38516415,'Gimenez','Agustina','1995,05,05',true)";
-        String sql="INSERT INTO alumno (dni, apellido, nombre, fechaNacimiento, estado)"
-            + "VALUES (33251879,'Guzman','Leandro','1989,10,06',true)";
-        String sql="INSERT INTO alumno (dni, apellido, nombre, fechaNacimiento, estado)"
-            + "VALUES (28592815,'Ramirez','Marianela','1982,01,14',true)";
-        String sql="INSERT INTO alumno (dni, apellido, nombre, fechaNacimiento, estado)"
-            + "VALUES (31515247,'Masson','Jose','1999,03,28',true)";*/
+       /* Alumno Juan= new Alumno (38514319,"Perez","Juan",LocalDate.of(2000,01,05),true);
+       Alumno Carla= new Alumno (32584389,"Romero","Carla",LocalDate.of(1999,01,20),true);*/
+        //AlumnoData alumno=new AlumnoData();
+        
+        //guardamos cambios en alumno
+        //alu.guardarAlumno(Carla);
+       
+        //alu.eliminarAlumno(1)
+        
+        
     
         
     //creamos objeto para enviar los datos de los alumnos
@@ -42,14 +46,15 @@ public class Transversal {
     }*/
                
     //agregamos materias
-    /*String sql="INSERT INTO materia (asignatura,anio,estado)"
-            + "VALUES ('Matematica', 2003, true)";
-    String sql="INSERT INTO materia (asignatura,anio,estado)"
-            + "VALUES ('Lengua', 2003, true)";
-    String sql="INSERT INTO materia (asignatura,anio,estado)"
-            + "VALUES ('Naturales', 2003, true)";
-    /*String sql="INSERT INTO materia (asignatura,anio,estado)"
-            + "VALUES ('Sociales', 2003, true)";*/
+    Materia mate=new Materia("Matematica", 2003, true);
+    Materia leng=new Materia("Lengua", 2003, true);
+    Materia Natu=new Materia("Naturales", 2003, true);
+    Materia Soc=new Materia("Sociales", 2003, true);
+    Materia Quim=new Materia("Quimica", 2003, true);
+    MateriaData materia=new MateriaData();
+    
+    //guardamos cambios en materia
+   // materia.guardarMateria(Quim);
     
     
     
