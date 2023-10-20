@@ -1,44 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package universidadejemplo.AccesoADatos;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+import universidadejemplo.Entidades.Materia;
 
-/**
- *
- * @author Celia
- */
+
 public class MateriaData {
-    private static final String URL="jdbc:mariadb://localhost/"; 
-    private static final String NombreBaseDatos="ulp"; 
-    private static final String USUARIO= "root"; 
-    private static final String PASSWORD=""; 
-    private static Connection connection; 
+    private Connection con = null;
     
-    private MateriaData(){}
-    
-    public static Connection getConnection(){
-        if(connection==null){
-            try { 
-                Class.forName("org.mariadb.jdbc.Driver");
-                connection = DriverManager.getConnection(URL+NombreBaseDatos,USUARIO,PASSWORD); 
+    public MateriaData() {
+
+ con = Conexion.getConnection();
+ 
+ }
+    public void guadarMateria(Materia materia){
+     String sql;
+        sql = "INSERT INTO materia(asignatura, anio, estado)" 
+                + "VALUES( ?, ?, ?)";
+    try { 
+            PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, materia.getAsignatura());
+            ps.setInt(2, materia.getAnio());
+            ps.setBoolean(3, materia.isActivo());
+            ps.executeUpdate(); 
+            
+            ResultSet rs=ps.getGeneratedKeys(); 
+            if(rs.next()){
+                materia.setIdMateria(rs.getInt(1)); ; 
+                JOptionPane.showMessageDialog(null, "Materia agregada exitosamente");
                 
-                JOptionPane.showMessageDialog(null,"Conectado");
-                
-                
-            } catch (ClassNotFoundException ex) {
-                JOptionPane.showMessageDialog(null, "Error al caragar los drivers"); 
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null,"Error al conectarse a la base de datos"); 
             }
-        }
-        return connection; 
+            ps.close();
+            
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla materia");
+        } 
     }
-    
 }
+    

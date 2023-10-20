@@ -12,10 +12,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import universidadejemplo.Entidades.Alumno;
 
-/**
- *
- * @author Celia
- */
+
 public class AlumnoData {
     private Connection con = null;
 
