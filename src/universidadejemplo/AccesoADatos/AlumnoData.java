@@ -45,6 +45,8 @@ public class AlumnoData {
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno");
+            System.out.println(ex.getMessage());
+            System.out.println("Codigo de error "+ex.getErrorCode());
         } 
  } 
 }

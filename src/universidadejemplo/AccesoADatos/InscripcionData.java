@@ -36,6 +36,8 @@ public class InscripcionData {
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion");
+            System.out.println(ex.getMessage());
+            System.out.println("Codigo de error "+ex.getErrorCode());
         }
     }
 }
