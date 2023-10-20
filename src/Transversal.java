@@ -1,16 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package universidadejemplo.AccesoADatos;
+
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 
 
 public class Transversal {
 
     
     public static void main(String[] args) throws ClassNotFoundException {
-        /*try {
+        
+        try {
 //cargamos driver de conexion
             Class.forName("org.mariadb.jdbc.Driver");
             
@@ -19,6 +18,8 @@ public class Transversal {
             String usuario="root";
             String password="";
             Connection con=DriverManager.getConnection(URL,usuario,password);
+            
+            JOptionPane.showMessageDialog(null,"Conectado");
             
             
             //cargamos alumnos
@@ -61,12 +62,12 @@ public class Transversal {
             
     
     
-       /*  } catch (ClassNotFoundException ex) {
+         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null,"Error al cargar Driver");
         } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null, "Error de conexion");
            System.out.println("Codigo de error "+ex.getErrorCode());
-        }*/
+        }
     }
     
     
