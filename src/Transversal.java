@@ -1,7 +1,10 @@
 
 import java.sql.*;
 import javax.swing.JOptionPane;
+import universidadejemplo.AccesoADatos.AlumnoData;
+import universidadejemplo.AccesoADatos.InscripcionData;
 import universidadejemplo.AccesoADatos.MateriaData;
+import universidadejemplo.Entidades.Alumno;
 import universidadejemplo.Entidades.Materia;
 
 
@@ -27,15 +30,19 @@ public class Transversal {
             //cargamos alumnos
        /* Alumno Juan= new Alumno (38514319,"Perez","Juan",LocalDate.of(2000,01,05),true);
        Alumno Carla= new Alumno (32584389,"Romero","Carla",LocalDate.of(1999,01,20),true);*/
-        //AlumnoData alumno=new AlumnoData();
-        
-        //guardamos cambios en alumno
+
+       /*AlumnoData alu=new AlumnoData();
         //alu.guardarAlumno(Carla);
-       
-        //alu.eliminarAlumno(1)
+        //alu.eliminarAlumno(1);
+        //alu.modificarAlumno();
+        Alumno alumnoEncontrado=alu.buscarAlumno(36);
+        if(alumnoEncontrado!=null){
+           System.out.println("dni "+alumnoEncontrado.getDni());
+           System.out.println("apellido "+alumnoEncontrado.getApellido());
+           System.out.println("nombre "+alumnoEncontrado.getNombre());
+           
         
-        
-    
+        }*/
         
     //creamos objeto para enviar los datos de los alumnos
     /*PreparedStatement ps=con.prepareStatement(sql);
@@ -75,7 +82,15 @@ public class Transversal {
         }
     }
     
+    /*AlumnoData ad=new AlumnoData():
+    MateriaData md=new MateriaData();
+    InscripcionData id=new InscripcionData();
     
+    Alumno agustina=ad.buscarAlumno(1);
+    Materia mate=buscarMateria(5);
+    Inscripcion insc=new Inscrpcion(ricardo,mate,9);
+    
+    id.guardarInscripcion(insc);*/
  
     
  }

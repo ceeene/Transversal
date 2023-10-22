@@ -50,22 +50,57 @@ public class AlumnoData {
         
  } 
   
- /*REVISAR, NO ENCUENTRO EL ERROR
- public void eliminarAlumno(Alumno alumno) throws SQLException{
-    
-         String sql1= "UPDATE alumno SET estado= 0 WHERE idAlumno= ? ";
-         try (PreparedStatement pss = con.prepareStatement(sql1)) {
-             pss.setInt(1, alumno);
-             int fila=pss.executeUpdate();
+ //REVISAR, NO ENCUENTRO EL ERROR
+ public void eliminarAlumno(int id) {
+    String sql1= "UPDATE alumno SET estado= 0 WHERE idAlumno= ? ";
+         try{ 
+            PreparedStatement ps = con.prepareStatement(sql1);
+             ps.setInt(1, id);
+             int exito=ps.executeUpdate();
              
-             if(fila==1){
+             if(exito==1){
                  JOptionPane.showMessageDialog(null, "Alumno eliminado");
              }
-         }
-     }catch (SQLException e){
+         }catch (SQLException ex){
          JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno");
      }
+ }
+/* public Alumno buscarAlumno(int id){
+    String sql2="SELECT dni, apellido, nombre FROM alumno WHERE idAlumno = ? AND estado=1"; 
+    Alumno alumno=null;
+    try{
+    PreparedStatement ps=con.prepareStatement(sql2);
+    ps.setInt(1,id);
+    ResultSet rs=ps.executeQuery();
+    if(rs.next()){
+        
+        alumno=new Alumno();
+        alumno.setIdAlumno(id);
+        alumno.setDni(rs.getInt("dni"));
+        alumno.setApellido(rs.getString("apellido"));
+        alumno.setNombre(rs.getString("nombre"));
+        alumno.setActivo(true);
+    
+    }else{
+        
+       JOptionPane.showMessageDialog(null,"Alumno no encontrado"); 
+    }
+    ps.close();
+    
+    }catch (SQLException ex){
+        JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno");
+    
+return alumno;
+    }
+ 
  }*/
- 
- 
 }
+
+ 
+
+
+
+ 
+ 
+ 
+
