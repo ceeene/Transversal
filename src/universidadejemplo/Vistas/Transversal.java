@@ -1,3 +1,5 @@
+package universidadejemplo.Vistas;
+
 
 import java.sql.*;
 import javax.swing.JOptionPane;

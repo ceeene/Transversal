@@ -50,7 +50,7 @@ public class AlumnoData {
         
  } 
   
- //REVISAR, NO ENCUENTRO EL ERROR
+ 
  public void eliminarAlumno(int id) {
     String sql1= "UPDATE alumno SET estado= 0 WHERE idAlumno= ? ";
          try{ 
