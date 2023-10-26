@@ -30,14 +30,22 @@ public class MenuG12 extends javax.swing.JFrame {
         escritorio = new javax.swing.JDesktopPane();
         JMBOpc = new javax.swing.JMenuBar();
         JMAlumno = new javax.swing.JMenu();
-        JMFormAlum = new javax.swing.JMenuItem();
+        JMFormAlum = new javax.swing.JMenu();
+        JMIBusqAlumno = new javax.swing.JMenuItem();
+        JMIEditarAlumno = new javax.swing.JMenuItem();
+        JMIAltaAlumno = new javax.swing.JMenuItem();
         JMMateria = new javax.swing.JMenu();
-        JMIFormMat = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        JMIAltaMateria = new javax.swing.JMenuItem();
+        JMIEditarMateria = new javax.swing.JMenuItem();
         JMAdmin = new javax.swing.JMenu();
-        JMInsc = new javax.swing.JMenuItem();
-        JMIManipNot = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        JMIInscripcion = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        JMICalificacionFinal = new javax.swing.JMenuItem();
         JMConsultas = new javax.swing.JMenu();
-        JMIAlumPorMat = new javax.swing.JMenuItem();
+        JMIListarXAlumno = new javax.swing.JMenuItem();
+        jMIListarXMateria = new javax.swing.JMenuItem();
         JMSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,61 +64,114 @@ public class MenuG12 extends javax.swing.JFrame {
 
         JMAlumno.setText("Alumno");
 
-        JMFormAlum.setText("Formulario de Alumno");
-        JMFormAlum.addActionListener(new java.awt.event.ActionListener() {
+        JMFormAlum.setText("Formulario Alumnos...");
+
+        JMIBusqAlumno.setText("Busqueda de Alumno");
+        JMIBusqAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMFormAlumActionPerformed(evt);
+                JMIBusqAlumnoActionPerformed(evt);
             }
         });
+        JMFormAlum.add(JMIBusqAlumno);
+
+        JMIEditarAlumno.setText("Editar/Eliminar Alumno");
+        JMIEditarAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIEditarAlumnoActionPerformed(evt);
+            }
+        });
+        JMFormAlum.add(JMIEditarAlumno);
+
+        JMIAltaAlumno.setText("Alta Alumno");
+        JMIAltaAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIAltaAlumnoActionPerformed(evt);
+            }
+        });
+        JMFormAlum.add(JMIAltaAlumno);
+
         JMAlumno.add(JMFormAlum);
 
         JMBOpc.add(JMAlumno);
 
         JMMateria.setText("Materia");
 
-        JMIFormMat.setText("Formulario de Materia");
-        JMIFormMat.addActionListener(new java.awt.event.ActionListener() {
+        jMenu1.setText("Formulario de Materias...");
+
+        JMIAltaMateria.setText("Alta Materia");
+        JMIAltaMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIFormMatActionPerformed(evt);
+                JMIAltaMateriaActionPerformed(evt);
             }
         });
-        JMMateria.add(JMIFormMat);
+        jMenu1.add(JMIAltaMateria);
+
+        JMIEditarMateria.setText("Editar/Eliminar Materia");
+        JMIEditarMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIEditarMateriaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(JMIEditarMateria);
+
+        JMMateria.add(jMenu1);
 
         JMBOpc.add(JMMateria);
 
         JMAdmin.setText("Administracion");
 
-        JMInsc.setText("Manejo de Inscripciones");
-        JMInsc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMInscActionPerformed(evt);
-            }
-        });
-        JMAdmin.add(JMInsc);
+        jMenu2.setText("Manejo de Inscripciones...");
 
-        JMIManipNot.setText("Manipulacion de Notas");
-        JMIManipNot.addActionListener(new java.awt.event.ActionListener() {
+        JMIInscripcion.setText("Gestionar Inscripcion");
+        JMIInscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIManipNotActionPerformed(evt);
+                JMIInscripcionActionPerformed(evt);
             }
         });
-        JMAdmin.add(JMIManipNot);
+        jMenu2.add(JMIInscripcion);
+
+        JMAdmin.add(jMenu2);
+
+        jMenu3.setText("Manipulacion de Notas");
+
+        JMICalificacionFinal.setText("Registrar Calificaciones");
+        JMICalificacionFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMICalificacionFinalActionPerformed(evt);
+            }
+        });
+        jMenu3.add(JMICalificacionFinal);
+
+        JMAdmin.add(jMenu3);
 
         JMBOpc.add(JMAdmin);
 
         JMConsultas.setText("Consultas");
 
-        JMIAlumPorMat.setText("Alumnos por Materia");
-        JMIAlumPorMat.addActionListener(new java.awt.event.ActionListener() {
+        JMIListarXAlumno.setText("Listar por alumno...");
+        JMIListarXAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIAlumPorMatActionPerformed(evt);
+                JMIListarXAlumnoActionPerformed(evt);
             }
         });
-        JMConsultas.add(JMIAlumPorMat);
+        JMConsultas.add(JMIListarXAlumno);
+
+        jMIListarXMateria.setText("Listar por Materia...");
+        jMIListarXMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIListarXMateriaActionPerformed(evt);
+            }
+        });
+        JMConsultas.add(jMIListarXMateria);
 
         JMBOpc.add(JMConsultas);
 
         JMSalir.setText("Salir");
+        JMSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMSalirActionPerformed(evt);
+            }
+        });
         JMBOpc.add(JMSalir);
 
         setJMenuBar(JMBOpc);
@@ -135,50 +196,90 @@ public class MenuG12 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JMFormAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMFormAlumActionPerformed
+    private void JMIListarXAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIListarXAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        FormularioAlumnos fa=new FormularioAlumnos();
-        fa.setVisible(true);
-        escritorio.add(fa);
-        escritorio.moveToFront(fa);
-    }//GEN-LAST:event_JMFormAlumActionPerformed
+        ListarPorAlumno lpa=new ListarPorAlumno();
+        lpa.setVisible(true);
+        escritorio.add(lpa);
+        escritorio.moveToFront(lpa);
+    }//GEN-LAST:event_JMIListarXAlumnoActionPerformed
 
-    private void JMIFormMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIFormMatActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        FormularioMaterias fm=new FormularioMaterias();
-        fm.setVisible(true);
-        escritorio.add(fm);
-        escritorio.moveToFront(fm);
-    }//GEN-LAST:event_JMIFormMatActionPerformed
+    private void JMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMSalirActionPerformed
+        
+    }//GEN-LAST:event_JMSalirActionPerformed
 
-    private void JMInscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMInscActionPerformed
+    private void JMIBusqAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIBusqAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        ManejoInscripciones mi=new ManejoInscripciones();
-        mi.setVisible(true);
-        escritorio.add(mi);
-        escritorio.moveToFront(mi);
-    }//GEN-LAST:event_JMInscActionPerformed
+        BusquedaAlumno ba=new BusquedaAlumno();
+        ba.setVisible(true);
+        escritorio.add(ba);
+        escritorio.moveToFront(ba);
+    }//GEN-LAST:event_JMIBusqAlumnoActionPerformed
 
-    private void JMIManipNotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIManipNotActionPerformed
+    private void JMIEditarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIEditarAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        ManipulacionNotas mn=new ManipulacionNotas();
-        mn.setVisible(true);
-        escritorio.add(mn);
-        escritorio.moveToFront(mn);
-    }//GEN-LAST:event_JMIManipNotActionPerformed
+        EditarEliminarAlumno eea=new EditarEliminarAlumno();
+        eea.setVisible(true);
+        escritorio.add(eea);
+        escritorio.moveToFront(eea);
+    }//GEN-LAST:event_JMIEditarAlumnoActionPerformed
 
-    private void JMIAlumPorMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAlumPorMatActionPerformed
+    private void JMIAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAltaAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        AlumnosPorMateria apm=new AlumnosPorMateria();
-        apm.setVisible(true);
-        escritorio.add(apm);
-        escritorio.moveToFront(apm);
-    }//GEN-LAST:event_JMIAlumPorMatActionPerformed
+        AltaAlumno aa=new AltaAlumno();
+        aa.setVisible(true);
+        escritorio.add(aa);
+        escritorio.moveToFront(aa);
+    }//GEN-LAST:event_JMIAltaAlumnoActionPerformed
+
+    private void JMIAltaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAltaMateriaActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        AltaMateria am=new AltaMateria();
+        am.setVisible(true);
+        escritorio.add(am);
+        escritorio.moveToFront(am);
+    }//GEN-LAST:event_JMIAltaMateriaActionPerformed
+
+    private void JMIEditarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIEditarMateriaActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        EditarEliminarMateria eem=new EditarEliminarMateria();
+        eem.setVisible(true);
+        escritorio.add(eem);
+        escritorio.moveToFront(eem);
+    }//GEN-LAST:event_JMIEditarMateriaActionPerformed
+
+    private void JMICalificacionFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMICalificacionFinalActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        Calificaciones cf=new Calificaciones();
+        cf.setVisible(true);
+        escritorio.add(cf);
+        escritorio.moveToFront(cf);
+    }//GEN-LAST:event_JMICalificacionFinalActionPerformed
+
+    private void JMIInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIInscripcionActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        GestionInscripcion gi=new GestionInscripcion();
+        gi.setVisible(true);
+        escritorio.add(gi);
+        escritorio.moveToFront(gi);
+    }//GEN-LAST:event_JMIInscripcionActionPerformed
+
+    private void jMIListarXMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIListarXMateriaActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        ListarPorMateria lpm=new ListarPorMateria();
+        lpm.setVisible(true);
+        escritorio.add(lpm);
+        escritorio.moveToFront(lpm);
+    }//GEN-LAST:event_jMIListarXMateriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,14 +322,22 @@ public class MenuG12 extends javax.swing.JFrame {
     private javax.swing.JMenu JMAlumno;
     private javax.swing.JMenuBar JMBOpc;
     private javax.swing.JMenu JMConsultas;
-    private javax.swing.JMenuItem JMFormAlum;
-    private javax.swing.JMenuItem JMIAlumPorMat;
-    private javax.swing.JMenuItem JMIFormMat;
-    private javax.swing.JMenuItem JMIManipNot;
-    private javax.swing.JMenuItem JMInsc;
+    private javax.swing.JMenu JMFormAlum;
+    private javax.swing.JMenuItem JMIAltaAlumno;
+    private javax.swing.JMenuItem JMIAltaMateria;
+    private javax.swing.JMenuItem JMIBusqAlumno;
+    private javax.swing.JMenuItem JMICalificacionFinal;
+    private javax.swing.JMenuItem JMIEditarAlumno;
+    private javax.swing.JMenuItem JMIEditarMateria;
+    private javax.swing.JMenuItem JMIInscripcion;
+    private javax.swing.JMenuItem JMIListarXAlumno;
     private javax.swing.JMenu JMMateria;
     private javax.swing.JMenu JMSalir;
     private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenuItem jMIListarXMateria;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     // End of variables declaration//GEN-END:variables
 
     
