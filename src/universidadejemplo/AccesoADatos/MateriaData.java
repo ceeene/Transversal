@@ -29,7 +29,7 @@ public class MateriaData {
  con = Conexion.getConexion();
  }
  
- public void guadarMateria(Materia materia){
+ public void guardarMateria(Materia materia){
      String sql="INSERT INTO materia( asignatura, anio, estado)"
              + "VALUES(?, ?, ?)"; 
      
