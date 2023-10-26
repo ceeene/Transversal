@@ -55,7 +55,9 @@ public class Universidad {
         System.out.println("nombre "+alumnoEncontrado.getNombre());
      }*/
         
-     id.actualizarNota(1,2,5);
+     //id.actualizarNota(1,2,5);
+     
+     id.borrarInscripcion(1, 2);
      
      
      
