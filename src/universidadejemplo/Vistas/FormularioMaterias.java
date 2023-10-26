@@ -9,12 +9,12 @@ package universidadejemplo.Vistas;
  *
  * @author Celia
  */
-public class EditarEliminarMateria extends javax.swing.JInternalFrame {
+public class FormularioMaterias extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form EditarEliminarMateria
      */
-    public EditarEliminarMateria() {
+    public FormularioMaterias() {
         initComponents();
     }
 

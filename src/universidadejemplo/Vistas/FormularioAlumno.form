@@ -77,31 +77,44 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="JLNombre" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLFechaNac" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLApellido" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLDni" min="-2" max="-2" attributes="0"/>
-                      <Component id="JLEstado" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="156" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="JTDni" pref="108" max="32767" attributes="0"/>
-                          <Component id="JTApellido" alignment="0" max="32767" attributes="0"/>
-                          <Component id="JTNombre" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="JBNuevo" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="JLNombre" min="-2" max="-2" attributes="0"/>
+                          <Component id="JLFechaNac" min="-2" max="-2" attributes="0"/>
+                          <Component id="JLApellido" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="JLDni" min="-2" max="-2" attributes="0"/>
+                          <Component id="JLEstado" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="JRBEstado" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JBBuscar" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace pref="156" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="JTDni" pref="108" max="32767" attributes="0"/>
+                                  <Component id="JTApellido" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JTNombre" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="JRBEstado" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="JBBuscar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="JBGuardar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="JBEliminar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="15" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -138,7 +151,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="JLFechaNac" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Component id="JBBuscar" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JBBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -193,6 +211,30 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jRadioButton1"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="JBNuevo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nuevo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBNuevoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="JBGuardar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Guardar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBGuardarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="JBEliminar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBEliminarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

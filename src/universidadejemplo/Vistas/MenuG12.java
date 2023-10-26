@@ -5,10 +5,7 @@
  */
 package universidadejemplo.Vistas;
 
-/**
- *
- * @author Celia
- */
+
 public class MenuG12 extends javax.swing.JFrame {
 
     /**
@@ -32,14 +29,10 @@ public class MenuG12 extends javax.swing.JFrame {
         JMAlumno = new javax.swing.JMenu();
         JMIFormAlumno = new javax.swing.JMenuItem();
         JMMateria = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        JMIAltaMateria = new javax.swing.JMenuItem();
-        JMIEditarMateria = new javax.swing.JMenuItem();
+        JMIFormMateria = new javax.swing.JMenuItem();
         JMAdmin = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        JMIInscripcion = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        JMICalificacionFinal = new javax.swing.JMenuItem();
+        JMIInscripciones = new javax.swing.JMenuItem();
+        JMINotas = new javax.swing.JMenuItem();
         JMConsultas = new javax.swing.JMenu();
         JMIListarXAlumno = new javax.swing.JMenuItem();
         jMIListarXMateria = new javax.swing.JMenuItem();
@@ -73,53 +66,33 @@ public class MenuG12 extends javax.swing.JFrame {
 
         JMMateria.setText("Materia");
 
-        jMenu1.setText("Formulario de Materias...");
-
-        JMIAltaMateria.setText("Alta Materia");
-        JMIAltaMateria.addActionListener(new java.awt.event.ActionListener() {
+        JMIFormMateria.setText("Formulario de Materias");
+        JMIFormMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIAltaMateriaActionPerformed(evt);
+                JMIFormMateriaActionPerformed(evt);
             }
         });
-        jMenu1.add(JMIAltaMateria);
-
-        JMIEditarMateria.setText("Editar/Eliminar Materia");
-        JMIEditarMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIEditarMateriaActionPerformed(evt);
-            }
-        });
-        jMenu1.add(JMIEditarMateria);
-
-        JMMateria.add(jMenu1);
+        JMMateria.add(JMIFormMateria);
 
         JMBOpc.add(JMMateria);
 
         JMAdmin.setText("Administracion");
 
-        jMenu2.setText("Manejo de Inscripciones...");
-
-        JMIInscripcion.setText("Gestionar Inscripcion");
-        JMIInscripcion.addActionListener(new java.awt.event.ActionListener() {
+        JMIInscripciones.setText("Manejo Inscripciones");
+        JMIInscripciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIInscripcionActionPerformed(evt);
+                JMIInscripcionesActionPerformed(evt);
             }
         });
-        jMenu2.add(JMIInscripcion);
+        JMAdmin.add(JMIInscripciones);
 
-        JMAdmin.add(jMenu2);
-
-        jMenu3.setText("Manipulacion de Notas");
-
-        JMICalificacionFinal.setText("Registrar Calificaciones");
-        JMICalificacionFinal.addActionListener(new java.awt.event.ActionListener() {
+        JMINotas.setText("Manipulacion de Notas");
+        JMINotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMICalificacionFinalActionPerformed(evt);
+                JMINotasActionPerformed(evt);
             }
         });
-        jMenu3.add(JMICalificacionFinal);
-
-        JMAdmin.add(jMenu3);
+        JMAdmin.add(JMINotas);
 
         JMBOpc.add(JMAdmin);
 
@@ -183,7 +156,7 @@ public class MenuG12 extends javax.swing.JFrame {
     }//GEN-LAST:event_JMIListarXAlumnoActionPerformed
 
     private void JMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMSalirActionPerformed
-        
+        dispose();
     }//GEN-LAST:event_JMSalirActionPerformed
 
     private void JMIFormAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIFormAlumnoActionPerformed
@@ -195,41 +168,14 @@ public class MenuG12 extends javax.swing.JFrame {
         escritorio.moveToFront(ba);
     }//GEN-LAST:event_JMIFormAlumnoActionPerformed
 
-    private void JMIAltaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAltaMateriaActionPerformed
+    private void JMIFormMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIFormMateriaActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        AltaMateria am=new AltaMateria();
-        am.setVisible(true);
-        escritorio.add(am);
-        escritorio.moveToFront(am);
-    }//GEN-LAST:event_JMIAltaMateriaActionPerformed
-
-    private void JMIEditarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIEditarMateriaActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        EditarEliminarMateria eem=new EditarEliminarMateria();
+        FormularioMaterias eem=new FormularioMaterias();
         eem.setVisible(true);
         escritorio.add(eem);
         escritorio.moveToFront(eem);
-    }//GEN-LAST:event_JMIEditarMateriaActionPerformed
-
-    private void JMICalificacionFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMICalificacionFinalActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        Calificaciones cf=new Calificaciones();
-        cf.setVisible(true);
-        escritorio.add(cf);
-        escritorio.moveToFront(cf);
-    }//GEN-LAST:event_JMICalificacionFinalActionPerformed
-
-    private void JMIInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIInscripcionActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        GestionInscripcion gi=new GestionInscripcion();
-        gi.setVisible(true);
-        escritorio.add(gi);
-        escritorio.moveToFront(gi);
-    }//GEN-LAST:event_JMIInscripcionActionPerformed
+    }//GEN-LAST:event_JMIFormMateriaActionPerformed
 
     private void jMIListarXMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIListarXMateriaActionPerformed
         escritorio.removeAll();
@@ -239,6 +185,24 @@ public class MenuG12 extends javax.swing.JFrame {
         escritorio.add(lpm);
         escritorio.moveToFront(lpm);
     }//GEN-LAST:event_jMIListarXMateriaActionPerformed
+
+    private void JMIInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIInscripcionesActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        ManejoInscripciones mi=new ManejoInscripciones();
+        mi.setVisible(true);
+        escritorio.add(mi);
+        escritorio.moveToFront(mi);
+    }//GEN-LAST:event_JMIInscripcionesActionPerformed
+
+    private void JMINotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMINotasActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        ManipulacionNotas mn=new ManipulacionNotas();
+        mn.setVisible(true);
+        escritorio.add(mn);
+        escritorio.moveToFront(mn);
+    }//GEN-LAST:event_JMINotasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,19 +245,15 @@ public class MenuG12 extends javax.swing.JFrame {
     private javax.swing.JMenu JMAlumno;
     private javax.swing.JMenuBar JMBOpc;
     private javax.swing.JMenu JMConsultas;
-    private javax.swing.JMenuItem JMIAltaMateria;
-    private javax.swing.JMenuItem JMICalificacionFinal;
-    private javax.swing.JMenuItem JMIEditarMateria;
     private javax.swing.JMenuItem JMIFormAlumno;
-    private javax.swing.JMenuItem JMIInscripcion;
+    private javax.swing.JMenuItem JMIFormMateria;
+    private javax.swing.JMenuItem JMIInscripciones;
     private javax.swing.JMenuItem JMIListarXAlumno;
+    private javax.swing.JMenuItem JMINotas;
     private javax.swing.JMenu JMMateria;
     private javax.swing.JMenu JMSalir;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem jMIListarXMateria;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     // End of variables declaration//GEN-END:variables
 
     

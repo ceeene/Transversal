@@ -52,9 +52,9 @@ public class AlumnoData {
   
  
  public void eliminarAlumno(int id) {
-    String sql1= "UPDATE alumno SET estado= 0 WHERE idAlumno= ? ";
+    String sql= "UPDATE alumno SET estado= 0 WHERE idAlumno= ? ";
          try{ 
-            PreparedStatement ps = con.prepareStatement(sql1);
+            PreparedStatement ps = con.prepareStatement(sql);
              ps.setInt(1, id);
              int exito=ps.executeUpdate();
              
@@ -66,10 +66,10 @@ public class AlumnoData {
      }
  }
     public Alumno buscarAlumno(int id){
-    String sql2="SELECT dni, apellido, nombre FROM alumno WHERE idAlumno = ? AND estado=1"; 
+    String sql="SELECT dni, apellido, nombre, fechaNacimiento FROM alumno WHERE idAlumno = ? AND estado=1"; 
     Alumno alumno=null;
     try{
-    PreparedStatement ps=con.prepareStatement(sql2);
+    PreparedStatement ps=con.prepareStatement(sql);
     ps.setInt(1,id);
     ResultSet rs=ps.executeQuery();
     if(rs.next()){
@@ -79,6 +79,7 @@ public class AlumnoData {
         alumno.setDni(rs.getInt("dni"));
         alumno.setApellido(rs.getString("apellido"));
         alumno.setNombre(rs.getString("nombre"));
+        alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
         alumno.setActivo(true);
     
     }else{
@@ -95,6 +96,42 @@ return alumno;
         return null;
  
  }
+    public Alumno buscarAlumnoPorDni(int dni){
+    String sql="SELECT dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni = ? AND estado=1"; 
+    Alumno alumno=null;
+    try{
+    PreparedStatement ps=con.prepareStatement(sql);
+    ps.setInt(1,dni);
+    ResultSet rs=ps.executeQuery();
+    if(rs.next()){
+        
+        alumno=new Alumno();
+        alumno.setDni(rs.getInt("dni"));
+        alumno.setApellido(rs.getString("apellido"));
+        alumno.setNombre(rs.getString("nombre"));
+        alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+        alumno.setActivo(true);
+    
+    }else{
+        
+       JOptionPane.showMessageDialog(null,"Alumno no encontrado"); 
+    }
+    ps.close();
+    
+    }catch (SQLException ex){
+        JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno");
+    
+return alumno;
+    }
+       
+        
+    
+
+    } 
+
+    public Alumno buscarAlumno() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
  

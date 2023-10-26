@@ -34,6 +34,10 @@ public class Alumno {
         this.activo = activo;
     }
 
+    public Alumno(Integer dni, String apellido, String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
 
