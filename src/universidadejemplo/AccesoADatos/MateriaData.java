@@ -26,7 +26,7 @@ public class MateriaData {
      
  public MateriaData() {
 
- con = Conexion.getConnection();
+ con = Conexion.getConexion();
  }
  
  public void guadarMateria(Materia materia){

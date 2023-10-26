@@ -3,7 +3,8 @@ package universidadejemplo.Vistas;
 
 
 
-import java.sql.Connection;
+import java.sql.*;
+import java.time.LocalDate;
 import universidadejemplo.AccesoADatos.AlumnoData;
 import universidadejemplo.AccesoADatos.Conexion;
 import universidadejemplo.Entidades.Alumno;
@@ -14,12 +15,32 @@ public class Universidad {
     
     public static void main(String[] args) {
         
-     Connection con= Conexion.getConnection();
+     Connection con= Conexion.getConexion();
+    
+               
+     
+     //PRUEBAS EN EL MAIN
+     //Alumno juan=new Alumno (9,12345678,"Cortez","Juan",LocalDate.of(1987,11,30),true);
+     
+     //OBJETOS PARA ENVIAR DATOS A LA BD
      AlumnoData alu=new AlumnoData();
-     //alu.guardarAlumno();
-     //alu.modificarAlumno();
-     //alu.eliminarAlumno();
-     Alumno alumnoEncontrado=alu.buscarAlumno();
+     for(Alumno alumno:alu.listarAlumnos()){
+         
+        System.out.println(alumno.getDni());
+        System.out.println(alumno.getApellido());
+        System.out.println(alumno.getNombre());
+        System.out.println(alumno.getFechaNacimiento());
+     }
+     //alu.guardarAlumno(juan);
+     //alu.modificarAlumno(juan);
+     //alu.eliminarAlumno(9);
+     /*Alumno alumnoEncontrado=alu.buscarAlumnoPorDni(31515247);
+     if (alumnoEncontrado!=null){
+        System.out.println("dni "+alumnoEncontrado.getDni());
+        System.out.println("apellido "+alumnoEncontrado.getApellido());
+        System.out.println("nombre "+alumnoEncontrado.getNombre());
+     }*/
+        
      
      
      

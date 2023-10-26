@@ -3,15 +3,24 @@ package universidadejemplo.AccesoADatos;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
+import universidadejemplo.Entidades.Alumno;
 import universidadejemplo.Entidades.Inscripcion;
+import universidadejemplo.Entidades.Materia;
 
 
 public class InscripcionData {
+    private int idInscripto;
+    private Alumno alumno;
+    private Materia materia;
+    private double nota;
+            
     private Connection con=null;
-    
+
+      
+       
     public InscripcionData(){
         
-        this.con=Conexion.getConnection();
+        this.con=Conexion.getConexion();
     }
     
     public void guardarInscripcion (Inscripcion insc){

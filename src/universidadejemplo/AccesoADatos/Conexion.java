@@ -4,8 +4,6 @@ package universidadejemplo.AccesoADatos;
 import java.sql.*; 
 
 import java.sql.Connection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Conexion {
@@ -18,7 +16,7 @@ public class Conexion {
     
     private Conexion(){}
     
-    public static Connection getConnection(){
+    public static Connection getConexion(){
         if(connection==null){
             try { 
                 Class.forName("org.mariadb.jdbc.Driver");
