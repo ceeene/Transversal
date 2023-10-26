@@ -30,10 +30,7 @@ public class MenuG12 extends javax.swing.JFrame {
         escritorio = new javax.swing.JDesktopPane();
         JMBOpc = new javax.swing.JMenuBar();
         JMAlumno = new javax.swing.JMenu();
-        JMFormAlum = new javax.swing.JMenu();
-        JMIBusqAlumno = new javax.swing.JMenuItem();
-        JMIEditarAlumno = new javax.swing.JMenuItem();
-        JMIAltaAlumno = new javax.swing.JMenuItem();
+        JMIFormAlumno = new javax.swing.JMenuItem();
         JMMateria = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         JMIAltaMateria = new javax.swing.JMenuItem();
@@ -64,33 +61,13 @@ public class MenuG12 extends javax.swing.JFrame {
 
         JMAlumno.setText("Alumno");
 
-        JMFormAlum.setText("Formulario Alumnos...");
-
-        JMIBusqAlumno.setText("Busqueda de Alumno");
-        JMIBusqAlumno.addActionListener(new java.awt.event.ActionListener() {
+        JMIFormAlumno.setText("Formulario de Alumno");
+        JMIFormAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIBusqAlumnoActionPerformed(evt);
+                JMIFormAlumnoActionPerformed(evt);
             }
         });
-        JMFormAlum.add(JMIBusqAlumno);
-
-        JMIEditarAlumno.setText("Editar/Eliminar Alumno");
-        JMIEditarAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIEditarAlumnoActionPerformed(evt);
-            }
-        });
-        JMFormAlum.add(JMIEditarAlumno);
-
-        JMIAltaAlumno.setText("Alta Alumno");
-        JMIAltaAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIAltaAlumnoActionPerformed(evt);
-            }
-        });
-        JMFormAlum.add(JMIAltaAlumno);
-
-        JMAlumno.add(JMFormAlum);
+        JMAlumno.add(JMIFormAlumno);
 
         JMBOpc.add(JMAlumno);
 
@@ -209,32 +186,14 @@ public class MenuG12 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_JMSalirActionPerformed
 
-    private void JMIBusqAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIBusqAlumnoActionPerformed
+    private void JMIFormAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIFormAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        BusquedaAlumno ba=new BusquedaAlumno();
+        FormularioAlumno ba=new FormularioAlumno();
         ba.setVisible(true);
         escritorio.add(ba);
         escritorio.moveToFront(ba);
-    }//GEN-LAST:event_JMIBusqAlumnoActionPerformed
-
-    private void JMIEditarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIEditarAlumnoActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        EditarEliminarAlumno eea=new EditarEliminarAlumno();
-        eea.setVisible(true);
-        escritorio.add(eea);
-        escritorio.moveToFront(eea);
-    }//GEN-LAST:event_JMIEditarAlumnoActionPerformed
-
-    private void JMIAltaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAltaAlumnoActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        AltaAlumno aa=new AltaAlumno();
-        aa.setVisible(true);
-        escritorio.add(aa);
-        escritorio.moveToFront(aa);
-    }//GEN-LAST:event_JMIAltaAlumnoActionPerformed
+    }//GEN-LAST:event_JMIFormAlumnoActionPerformed
 
     private void JMIAltaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAltaMateriaActionPerformed
         escritorio.removeAll();
@@ -322,13 +281,10 @@ public class MenuG12 extends javax.swing.JFrame {
     private javax.swing.JMenu JMAlumno;
     private javax.swing.JMenuBar JMBOpc;
     private javax.swing.JMenu JMConsultas;
-    private javax.swing.JMenu JMFormAlum;
-    private javax.swing.JMenuItem JMIAltaAlumno;
     private javax.swing.JMenuItem JMIAltaMateria;
-    private javax.swing.JMenuItem JMIBusqAlumno;
     private javax.swing.JMenuItem JMICalificacionFinal;
-    private javax.swing.JMenuItem JMIEditarAlumno;
     private javax.swing.JMenuItem JMIEditarMateria;
+    private javax.swing.JMenuItem JMIFormAlumno;
     private javax.swing.JMenuItem JMIInscripcion;
     private javax.swing.JMenuItem JMIListarXAlumno;
     private javax.swing.JMenu JMMateria;

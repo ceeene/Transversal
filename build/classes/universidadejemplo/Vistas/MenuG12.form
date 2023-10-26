@@ -9,37 +9,14 @@
             <Property name="text" type="java.lang.String" value="Alumno"/>
           </Properties>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="JMFormAlum">
+            <MenuItem class="javax.swing.JMenuItem" name="JMIFormAlumno">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Formulario Alumnos..."/>
+                <Property name="text" type="java.lang.String" value="Formulario de Alumno"/>
               </Properties>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="JMIBusqAlumno">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Busqueda de Alumno"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMIBusqAlumnoActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="JMIEditarAlumno">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Editar/Eliminar Alumno"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMIEditarAlumnoActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="JMIAltaAlumno">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Alta Alumno"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMIAltaAlumnoActionPerformed"/>
-                  </Events>
-                </MenuItem>
-              </SubComponents>
-            </Menu>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMIFormAlumnoActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="JMMateria">
