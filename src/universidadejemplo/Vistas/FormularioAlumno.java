@@ -1,6 +1,7 @@
 
 package universidadejemplo.Vistas;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import universidadejemplo.AccesoADatos.AlumnoData;
@@ -306,7 +307,7 @@ private void limpiarCampos(){
     JTApellido.setText("");
     JTNombre.setText("");
     JRBEstado.setSelected(true);
-    //jcfechaNac.setDate(new Date());
+    //JDCFechaNac.setDate(new Date());
 }
 
     private static class sfecha {
