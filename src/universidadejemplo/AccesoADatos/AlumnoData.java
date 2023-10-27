@@ -120,19 +120,20 @@ public class AlumnoData {
     
     }catch (SQLException ex){
         JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno");
-    
+    }
 return alumno;
     }
-        return null;
+       
         
-    }
+    
  
     public Alumno buscarAlumnoPorDni(int dni){
-    String sql="SELECT idAlumno,dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni = ? "
+     Alumno alumno=null;    
+        String sql="SELECT idAlumno,dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni = ? "
             + "AND estado=1"; 
-    Alumno alumno=null;
+    PreparedStatement ps=null;
     try{
-    PreparedStatement ps=con.prepareStatement(sql);
+    ps=con.prepareStatement(sql);
     ps.setInt(1,dni);
     ResultSet rs=ps.executeQuery();
     if(rs.next()){
@@ -153,13 +154,13 @@ return alumno;
     
     }catch (SQLException ex){
         JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno");
-    
+    }
 return alumno;
     }
-        return null;
+        
        
         
-    } 
+     
 public  List<Alumno>listarAlumnos(){
     String sql="SELECT idAlumno,dni, apellido, nombre, fechaNacimiento FROM alumno WHERE estado = 1 ";
     ArrayList<Alumno> alumnos=new ArrayList<>();
@@ -182,13 +183,13 @@ public  List<Alumno>listarAlumnos(){
     
     }catch (SQLException ex){
         JOptionPane.showMessageDialog(null,"Error al acceder a la tabla alumno");
-    
+    }    
 return alumnos;
    
     
 }
-        return null;
-}
+        
+
 }
 
  

@@ -92,13 +92,13 @@ String sql= "UPDATE Materia SET estado= 0 "
              JOptionPane.showMessageDialog(null,"error al eliminar");
          }
  }
-public void buscarMateria (int id) {
-
-String sql= "SELECT asignatura, anio, estado FROM Materia WHERE id= ?";
-
+public Materia buscarMateria (int id) {
         Materia materia= null;
+String sql= "SELECT asignatura, anio FROM materia WHERE idMateria= ? AND estado=1";
+         PreparedStatement ps=null;
+        
          try {
-             PreparedStatement ps= con.prepareStatement(sql);
+             ps=con.prepareStatement(sql);
              ps.setInt(1,id);
             ResultSet rs= ps.executeQuery();
             
@@ -107,7 +107,7 @@ String sql= "SELECT asignatura, anio, estado FROM Materia WHERE id= ?";
                 materia= new Materia ();
                 materia.setIdMateria(id);
                 materia.setAsignatura(rs.getString("asignatura"));
-                materia.setAnio(rs.getInt("año"));
+                materia.setAnio(rs.getInt("anio"));
                 materia.setActivo (true);
               
             } else {
@@ -124,6 +124,7 @@ String sql= "SELECT asignatura, anio, estado FROM Materia WHERE id= ?";
          } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null,"error al buscar materia");
          }
+         return materia;
 }
  public List<Materia> ListaMaterias (){
  
