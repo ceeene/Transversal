@@ -11,6 +11,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="JMIFormAlumno">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/universidadejemplo/Vistas/imagenes/alumno 50x50.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Formulario de Alumno"/>
               </Properties>
               <Events>
@@ -26,6 +29,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="JMIFormMateria">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/universidadejemplo/Vistas/imagenes/materia.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Formulario de Materias"/>
               </Properties>
               <Events>
@@ -41,6 +47,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="JMIInscripciones">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/universidadejemplo/Vistas/imagenes/inscripcion.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Manejo Inscripciones"/>
               </Properties>
               <Events>
@@ -49,6 +58,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="JMINotas">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/universidadejemplo/Vistas/imagenes/calificacion.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Manipulacion de Notas"/>
               </Properties>
               <Events>
@@ -64,6 +76,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="JMIListarXAlumno">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/universidadejemplo/Vistas/imagenes/alumno por materia.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Listar por alumno..."/>
               </Properties>
               <Events>
@@ -72,6 +87,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMIListarXMateria">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/universidadejemplo/Vistas/imagenes/listar materias.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Listar por Materia..."/>
               </Properties>
               <Events>
@@ -87,6 +105,19 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMSalirActionPerformed"/>
           </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMISalir">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/universidadejemplo/Vistas/imagenes/cerrar-sesion.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Salir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMISalirActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

@@ -5,6 +5,10 @@
  */
 package universidadejemplo.Vistas;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 
 public class MenuG12 extends javax.swing.JFrame {
 
@@ -37,6 +41,7 @@ public class MenuG12 extends javax.swing.JFrame {
         JMIListarXAlumno = new javax.swing.JMenuItem();
         jMIListarXMateria = new javax.swing.JMenuItem();
         JMSalir = new javax.swing.JMenu();
+        jMISalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestion de Alumnos");
@@ -54,6 +59,7 @@ public class MenuG12 extends javax.swing.JFrame {
 
         JMAlumno.setText("Alumno");
 
+        JMIFormAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadejemplo/Vistas/imagenes/alumno 50x50.png"))); // NOI18N
         JMIFormAlumno.setText("Formulario de Alumno");
         JMIFormAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +72,7 @@ public class MenuG12 extends javax.swing.JFrame {
 
         JMMateria.setText("Materia");
 
+        JMIFormMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadejemplo/Vistas/imagenes/materia.png"))); // NOI18N
         JMIFormMateria.setText("Formulario de Materias");
         JMIFormMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +85,7 @@ public class MenuG12 extends javax.swing.JFrame {
 
         JMAdmin.setText("Administracion");
 
+        JMIInscripciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadejemplo/Vistas/imagenes/inscripcion.png"))); // NOI18N
         JMIInscripciones.setText("Manejo Inscripciones");
         JMIInscripciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +94,7 @@ public class MenuG12 extends javax.swing.JFrame {
         });
         JMAdmin.add(JMIInscripciones);
 
+        JMINotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadejemplo/Vistas/imagenes/calificacion.png"))); // NOI18N
         JMINotas.setText("Manipulacion de Notas");
         JMINotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +107,7 @@ public class MenuG12 extends javax.swing.JFrame {
 
         JMConsultas.setText("Consultas");
 
+        JMIListarXAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadejemplo/Vistas/imagenes/alumno por materia.png"))); // NOI18N
         JMIListarXAlumno.setText("Listar por alumno...");
         JMIListarXAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +116,7 @@ public class MenuG12 extends javax.swing.JFrame {
         });
         JMConsultas.add(JMIListarXAlumno);
 
+        jMIListarXMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadejemplo/Vistas/imagenes/listar materias.png"))); // NOI18N
         jMIListarXMateria.setText("Listar por Materia...");
         jMIListarXMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +133,16 @@ public class MenuG12 extends javax.swing.JFrame {
                 JMSalirActionPerformed(evt);
             }
         });
+
+        jMISalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadejemplo/Vistas/imagenes/cerrar-sesion.png"))); // NOI18N
+        jMISalir.setText("Salir");
+        jMISalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISalirActionPerformed(evt);
+            }
+        });
+        JMSalir.add(jMISalir);
+
         JMBOpc.add(JMSalir);
 
         setJMenuBar(JMBOpc);
@@ -154,10 +175,6 @@ public class MenuG12 extends javax.swing.JFrame {
         escritorio.add(lpa);
         escritorio.moveToFront(lpa);
     }//GEN-LAST:event_JMIListarXAlumnoActionPerformed
-
-    private void JMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMSalirActionPerformed
-        dispose();
-    }//GEN-LAST:event_JMSalirActionPerformed
 
     private void JMIFormAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIFormAlumnoActionPerformed
         escritorio.removeAll();
@@ -203,6 +220,14 @@ public class MenuG12 extends javax.swing.JFrame {
         escritorio.add(mn);
         escritorio.moveToFront(mn);
     }//GEN-LAST:event_JMINotasActionPerformed
+
+    private void JMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_JMSalirActionPerformed
+
+    private void jMISalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jMISalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,6 +279,7 @@ public class MenuG12 extends javax.swing.JFrame {
     private javax.swing.JMenu JMSalir;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem jMIListarXMateria;
+    private javax.swing.JMenuItem jMISalir;
     // End of variables declaration//GEN-END:variables
 
     
