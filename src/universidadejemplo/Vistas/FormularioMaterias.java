@@ -44,6 +44,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         JBEliminar = new javax.swing.JButton();
         JBSalir = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 153));
         setTitle("Gestion de Materias");
 
         JLCodigo.setText("Codigo de materia:");
