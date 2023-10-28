@@ -9,9 +9,9 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import javax.swing.JOptionPane;
 import universidadejemplo.AccesoADatos.AlumnoData;
-import universidadejemplo.AccesoADatos.MateriaData;
+import universidadejemplo.AccesoADatos.*;
 import universidadejemplo.Entidades.Alumno;
-import universidadejemplo.Entidades.Materia;
+import universidadejemplo.Entidades.*;
 
 
 public class FormularioMaterias extends javax.swing.JInternalFrame {
@@ -197,7 +197,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbNuevoActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-       /*try{
+       try{
         String asignatura=JTAsignatura.getText();
         Integer anio=Integer.parseInt(JTAnio.getText());
         
@@ -209,19 +209,22 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         Boolean estado=JRBEstado.isSelected();
         if (materiaActual==null){
             
-           materiaActual=new Materia(idMateria,asignatura,anio, estado);
+           materiaActual=new Materia(asignatura,anio, estado);
            matData.guardarMateria(materiaActual);
             
         }else {
-            materiaActual.setIdMateria(id);
             materiaActual.setAsignatura(asignatura);
             materiaActual.setAnio(anio);
             
             matData.modificarMateria(materiaActual);
                        
-
+        } 
     }//GEN-LAST:event_jbGuardarActionPerformed
-
+        catch(NumberFormatException nfe){
+         JOptionPane.showMessageDialog(this,"Debe ingresar un numero de id valido");   
+        } 
+    }
+    
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
         try{
             Integer idMateria=Integer.parseInt(JTCodigo.getText());
@@ -238,8 +241,8 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this,"Debe ingresar un numero de id valido");
         }
     }//GEN-LAST:event_jbBuscarActionPerformed
-       } 
-    }*/
+        
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLAnio;
@@ -266,3 +269,4 @@ private void limpiarCampos(){
 }
 
 }
+
