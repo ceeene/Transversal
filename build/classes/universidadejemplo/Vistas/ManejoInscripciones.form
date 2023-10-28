@@ -58,7 +58,7 @@
                       <Group type="102" attributes="0">
                           <Component id="JLSeleccion" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="JCBAlumno" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="cboxAlumno" min="-2" pref="110" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -92,7 +92,7 @@
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JLSeleccion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JCBAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cboxAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -120,19 +120,17 @@
             <Property name="text" type="java.lang.String" value="Seleccione un alumno:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="JCBAlumno">
+        <Component class="javax.swing.JComboBox" name="cboxAlumno">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxAlumnoActionPerformed"/>
+          </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Alumno&gt;"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -147,7 +145,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="JTMaterias">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
@@ -164,6 +162,7 @@
         <Component class="javax.swing.JButton" name="JBInscribir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Inscribir"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="JBAnular">
@@ -174,12 +173,16 @@
         <Component class="javax.swing.JButton" name="JBSalir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salir"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="JRBInscriptas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Materias Inscriptas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBInscriptasActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="JRBNoInscriptas">
           <Properties>

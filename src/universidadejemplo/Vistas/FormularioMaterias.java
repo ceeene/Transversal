@@ -32,34 +32,34 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         JLCodigo = new javax.swing.JLabel();
         JTCodigo = new javax.swing.JTextField();
-        JBGuardar = new javax.swing.JButton();
-        JBBuscar = new javax.swing.JButton();
+        jbGuardar = new javax.swing.JButton();
+        jbBuscar = new javax.swing.JButton();
         JLAsignatura = new javax.swing.JLabel();
         JTAsignatura = new javax.swing.JTextField();
         JLAnio = new javax.swing.JLabel();
         JTAnio = new javax.swing.JTextField();
         JLEstado = new javax.swing.JLabel();
         JRBEstado = new javax.swing.JRadioButton();
-        JBNuevo = new javax.swing.JButton();
-        JBEliminar = new javax.swing.JButton();
-        JBSalir = new javax.swing.JButton();
+        jbNuevo = new javax.swing.JButton();
+        jbEliminar = new javax.swing.JButton();
+        jbSalir = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 153));
         setTitle("Gestion de Materias");
 
         JLCodigo.setText("Codigo de materia:");
 
-        JBGuardar.setText("Guardar");
-        JBGuardar.addActionListener(new java.awt.event.ActionListener() {
+        jbGuardar.setText("Guardar");
+        jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBGuardarActionPerformed(evt);
+                jbGuardarActionPerformed(evt);
             }
         });
 
-        JBBuscar.setText("Buscar");
-        JBBuscar.addActionListener(new java.awt.event.ActionListener() {
+        jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBBuscarActionPerformed(evt);
+                jbBuscarActionPerformed(evt);
             }
         });
 
@@ -71,24 +71,24 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
 
         JRBEstado.setText("Activo");
 
-        JBNuevo.setText("Nuevo");
-        JBNuevo.addActionListener(new java.awt.event.ActionListener() {
+        jbNuevo.setText("Nuevo");
+        jbNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBNuevoActionPerformed(evt);
+                jbNuevoActionPerformed(evt);
             }
         });
 
-        JBEliminar.setText("Eliminar");
-        JBEliminar.addActionListener(new java.awt.event.ActionListener() {
+        jbEliminar.setText("Eliminar");
+        jbEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEliminarActionPerformed(evt);
+                jbEliminarActionPerformed(evt);
             }
         });
 
-        JBSalir.setText("Salir");
-        JBSalir.addActionListener(new java.awt.event.ActionListener() {
+        jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBSalirActionPerformed(evt);
+                jbSalirActionPerformed(evt);
             }
         });
 
@@ -100,13 +100,13 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(JBNuevo)
+                        .addComponent(jbNuevo)
                         .addGap(18, 18, 18)
-                        .addComponent(JBGuardar)
+                        .addComponent(jbGuardar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(JBEliminar)
+                        .addComponent(jbEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                        .addComponent(JBSalir))
+                        .addComponent(jbSalir))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +122,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
                                     .addComponent(JTAsignatura)
                                     .addComponent(JTAnio))
                                 .addGap(38, 38, 38)
-                                .addComponent(JBBuscar))
+                                .addComponent(jbBuscar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(37, 37, 37)
                                 .addComponent(JRBEstado)))))
@@ -135,7 +135,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLCodigo)
                     .addComponent(JTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBBuscar))
+                    .addComponent(jbBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLAsignatura)
@@ -150,10 +150,10 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
                     .addComponent(JRBEstado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBGuardar)
-                    .addComponent(JBNuevo)
-                    .addComponent(JBEliminar)
-                    .addComponent(JBSalir))
+                    .addComponent(jbGuardar)
+                    .addComponent(jbNuevo)
+                    .addComponent(jbEliminar)
+                    .addComponent(jbSalir))
                 .addGap(34, 34, 34))
         );
 
@@ -177,28 +177,11 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarActionPerformed
-        try{
-          Integer idMateria=Integer.parseInt(JTCodigo.getText());
-          materiaActual=matData.buscarMateria(idMateria);
-          if(materiaActual!=null){
-              
-              JTAsignatura.setText(materiaActual.getAsignatura());
-              JTAnio.setText(materiaActual.getAnio()+""); //comillas porque anio es int
-              JRBEstado.setSelected(materiaActual.isActivo());
-              
-          }
-          
-      }catch (NumberFormatException ex){
-          JOptionPane.showMessageDialog(this,"Debe ingresar un numero de id valido");
-      }  
-    }//GEN-LAST:event_JBBuscarActionPerformed
-
-    private void JBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalirActionPerformed
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
         dispose();
-    }//GEN-LAST:event_JBSalirActionPerformed
+    }//GEN-LAST:event_jbSalirActionPerformed
 
-    private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
+    private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
          if (materiaActual!=null){
             matData.eliminarMateria (materiaActual.getIdMateria());
             materiaActual=null;
@@ -206,14 +189,14 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         }else{
             JOptionPane.showMessageDialog(this,"No hay una materia seleccionada");
         }
-    }//GEN-LAST:event_JBEliminarActionPerformed
+    }//GEN-LAST:event_jbEliminarActionPerformed
 
-    private void JBNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNuevoActionPerformed
+    private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
        limpiarCampos();
         materiaActual=null;
-    }//GEN-LAST:event_JBNuevoActionPerformed
+    }//GEN-LAST:event_jbNuevoActionPerformed
 
-    private void JBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarActionPerformed
+    private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
        /*try{
         String asignatura=JTAsignatura.getText();
         Integer anio=Integer.parseInt(JTAnio.getText());
@@ -237,16 +220,28 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
             matData.modificarMateria(materiaActual);
                        
 
-    }//GEN-LAST:event_JBGuardarActionPerformed
+    }//GEN-LAST:event_jbGuardarActionPerformed
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        try{
+            Integer idMateria=Integer.parseInt(JTCodigo.getText());
+            materiaActual=matData.buscarMateria(idMateria);
+            if(materiaActual!=null){
+
+                JTAsignatura.setText(materiaActual.getAsignatura());
+                JTAnio.setText(materiaActual.getAnio()+""); //comillas porque anio es int
+                JRBEstado.setSelected(materiaActual.isActivo());
+
+            }
+
+        }catch (NumberFormatException ex){
+            JOptionPane.showMessageDialog(this,"Debe ingresar un numero de id valido");
+        }
+    }//GEN-LAST:event_jbBuscarActionPerformed
        } 
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBBuscar;
-    private javax.swing.JButton JBEliminar;
-    private javax.swing.JButton JBGuardar;
-    private javax.swing.JButton JBNuevo;
-    private javax.swing.JButton JBSalir;
     private javax.swing.JLabel JLAnio;
     private javax.swing.JLabel JLAsignatura;
     private javax.swing.JLabel JLCodigo;
@@ -256,6 +251,11 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
     private javax.swing.JTextField JTAsignatura;
     private javax.swing.JTextField JTCodigo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbBuscar;
+    private javax.swing.JButton jbEliminar;
+    private javax.swing.JButton jbGuardar;
+    private javax.swing.JButton jbNuevo;
+    private javax.swing.JButton jbSalir;
     // End of variables declaration//GEN-END:variables
 
 private void limpiarCampos(){
