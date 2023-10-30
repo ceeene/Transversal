@@ -42,7 +42,7 @@ public class InscripcionData {
             ps.executeUpdate();
             
             ResultSet rs=ps.getGeneratedKeys();
-            if(rs.next());{
+            if(rs.next()){
             
             insc.setIdInscripcion(rs.getInt(1));
             JOptionPane.showMessageDialog(null,"Inscripcion Registrada");
@@ -155,7 +155,7 @@ public class InscripcionData {
      
      public List<Materia> obtenerMateriasCursadas(int idAlumno){
          ArrayList<Materia> materias=new ArrayList<>();
-         String sql="SELECT inscripcion.idMateria, nombre, anioMateria FROM inscripcion,"
+         String sql="SELECT inscripcion.idMateria, asignatura, anio FROM inscripcion,"
                  + "materia WHERE inscripcion.idMateria = materia.idMateria"+
                  "AND inscripcion.idAlumno = ?; ";
           try {
@@ -166,8 +166,8 @@ public class InscripcionData {
                   
                   Materia materia=new Materia();
                   materia.setIdMateria(rs.getInt("idMateria"));
-                  materia.setAsignatura(rs.getString("nombre"));
-                  materia.setAnio(rs.getInt("anioMateria"));
+                  materia.setAsignatura(rs.getString("asignatura"));
+                  materia.setAnio(rs.getInt("anio"));
                   materias.add(materia);
               }
               

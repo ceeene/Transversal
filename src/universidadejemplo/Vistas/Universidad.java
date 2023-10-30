@@ -27,13 +27,13 @@ public class Universidad {
      //Alumno juan=new Alumno (9,12345678,"Cortez","Juan",LocalDate.of(1987,11,30),true);
      
      //OBJETOS PARA ENVIAR DATOS A LA BD
-     AlumnoData ad=new AlumnoData();
+     /*AlumnoData ad=new AlumnoData();
      MateriaData md=new MateriaData();
      InscripcionData id=new InscripcionData();
      
-    /* Alumno jose=ad.buscarAlumno(1);
-     Materia mate=md.buscarMateria(5);
-     Inscripcion insc=new Inscripcion(jose,mate,9);
+    Alumno jose=ad.buscarAlumno(1);
+     Materia mate=md.buscarMateria(4);
+     Inscripcion insc=new Inscripcion(jose,mate,5);
      id.guardarInscripcion(insc);*/
      
              
@@ -57,7 +57,7 @@ public class Universidad {
         
      //id.actualizarNota(1,2,5);
      
-     id.borrarInscripcion(1, 2);
+     //id.borrarInscripcion(1, 2);
      
      
      
