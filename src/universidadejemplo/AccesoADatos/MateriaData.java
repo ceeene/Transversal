@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package universidadejemplo.AccesoADatos;
 
 import java.sql.Connection;
@@ -26,10 +22,10 @@ public class MateriaData {
      
  public MateriaData() {
 
- con = Conexion.getConnection();
+ con = Conexion.getConexion();
  }
  
- public void guadarMateria(Materia materia){
+ public void guardarMateria(Materia materia){
      String sql="INSERT INTO materia( asignatura, anio, estado)"
              + "VALUES(?, ?, ?)"; 
      
@@ -42,7 +38,7 @@ public class MateriaData {
             
             ResultSet rs=ps.getGeneratedKeys(); 
             if(rs.next()){
-                materia.setIdMateria(rs.getInt(1)); ; 
+                materia.setIdMateria(rs.getInt(1)); 
                 JOptionPane.showMessageDialog(null, "materia agregada exitosamente");
                 
             }
@@ -66,10 +62,10 @@ PreparedStatement ps= con.prepareStatement(sql);
  
  if (exito ==1) {}
  
- JOptionPane.showMessageDialog(null, "alumno modificado correctamente");
+ JOptionPane.showMessageDialog(null, "Materia modificada correctamente");
 } catch (SQLException ex) {
 
-JOptionPane.showMessageDialog(null,"error al acceder a la tabla materia");
+JOptionPane.showMessageDialog(null,"Error al acceder a la tabla materia");
 } 
  }
  
@@ -87,18 +83,18 @@ String sql= "UPDATE Materia SET estado= 0 "
              
              if (exito ==1) {
  
- JOptionPane.showMessageDialog(null, "alumno eliminado correctamente");}
+ JOptionPane.showMessageDialog(null, "Materia eliminada correctamente");}
          } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null,"error al eliminar");
          }
  }
-public void buscarMateria (int id) {
-
-String sql= "SELECT asignatura, anio, estado FROM Materia WHERE id= ?";
-
+public Materia buscarMateria (int id) {
         Materia materia= null;
+String sql= "SELECT asignatura, anio FROM materia WHERE idMateria= ? AND estado=1";
+         PreparedStatement ps=null;
+        
          try {
-             PreparedStatement ps= con.prepareStatement(sql);
+             ps=con.prepareStatement(sql);
              ps.setInt(1,id);
             ResultSet rs= ps.executeQuery();
             
@@ -107,7 +103,7 @@ String sql= "SELECT asignatura, anio, estado FROM Materia WHERE id= ?";
                 materia= new Materia ();
                 materia.setIdMateria(id);
                 materia.setAsignatura(rs.getString("asignatura"));
-                materia.setAnio(rs.getInt("año"));
+                materia.setAnio(rs.getInt("anio"));
                 materia.setActivo (true);
               
             } else {
@@ -124,6 +120,7 @@ String sql= "SELECT asignatura, anio, estado FROM Materia WHERE id= ?";
          } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null,"error al buscar materia");
          }
+         return materia;
 }
  public List<Materia> ListaMaterias (){
  

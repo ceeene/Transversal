@@ -34,6 +34,10 @@ public class Alumno {
         this.activo = activo;
     }
 
+    public Alumno(Integer dni, String apellido, String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
 
@@ -88,7 +92,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "idAlumno=" + idAlumno + ", dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre +'}';
+        return apellido+", "+nombre;
     }
     
     

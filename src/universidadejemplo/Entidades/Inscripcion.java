@@ -12,17 +12,17 @@ public class Inscripcion {
         this.idInscripcion = idInscripcion;
         this.alumno = alumno;
         this.materia = materia;
-        this.nota = nota;
+        this.nota =  nota;
     }
 
     public Inscripcion(Alumno alumno, Materia materia, double nota) {
         this.alumno = alumno;
         this.materia = materia;
-        this.nota = nota;
+        this.nota =  nota;
     }
 
     public Inscripcion(double nota) {
-        this.nota = nota;
+        this.nota =  nota;
     }
 
     public Inscripcion() {
@@ -57,7 +57,7 @@ public class Inscripcion {
     }
 
     public void setNota(double nota) {
-        this.nota = nota;
+        this.nota =  nota;
     }
 
     @Override
