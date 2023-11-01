@@ -90,7 +90,7 @@ String sql= "UPDATE Materia SET estado= 0 "
  }
 public Materia buscarMateria (int id) {
         Materia materia= null;
-String sql= "SELECT asignatura, anio FROM materia WHERE idMateria= ? AND estado=1";
+String sql= "SELECT asignatura, anio FROM materia WHERE idMateria= ? ";
          PreparedStatement ps=null;
         
          try {
@@ -109,7 +109,7 @@ String sql= "SELECT asignatura, anio FROM materia WHERE idMateria= ? AND estado=
             } else {
             
             
-            JOptionPane.showMessageDialog(null, "no existe un alumno con ese id");
+            JOptionPane.showMessageDialog(null, "no existe un materia con ese id");
             
             }            
             

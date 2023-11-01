@@ -34,7 +34,7 @@ public class ManejoInscripciones extends javax.swing.JInternalFrame {
         initComponents();
         
         aData = new AlumnoData();
-        listaA = aData.listarAlumnos(); 
+        listaA = (List <Alumno>)aData.listarAlumnos(); 
         modelo = new DefaultTableModel(); 
         cargaAlumnos(); 
         armarCabeceraTabla(); 
@@ -213,7 +213,7 @@ public class ManejoInscripciones extends javax.swing.JInternalFrame {
     private void JRBNoInscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBNoInscriptasActionPerformed
         borrarFilaTabla();
         JRBInscriptas.setSelected(false);
-        cargaDatosNoInscriptas();
+        cargaDatosNoInscriptos();
         JBAnular.setEnabled(false);
         JBInscribir.setEnabled(true);
     }//GEN-LAST:event_JRBNoInscriptasActionPerformed
@@ -225,9 +225,9 @@ public class ManejoInscripciones extends javax.swing.JInternalFrame {
             Alumno a=(Alumno)cboxAlumno.getSelectedItem();
             
             int idMateria=(Integer)modelo.getValueAt(filaSeleccionada, 0);
-            String asignatura=(String)modelo.getValueAt(filaSeleccionada, 1);
-            int anio=(Integer)modelo.getValueAt(filaSeleccionada,2);
-            Materia m=new Materia(idMateria,asignatura,anio,true);
+            String nombreMateria=(String)modelo.getValueAt(filaSeleccionada, 2);
+            int anio=(Integer)modelo.getValueAt(filaSeleccionada,1);
+            Materia m=new Materia(idMateria,nombreMateria,anio,true);
             
             Inscripcion i=new Inscripcion(a, m, 0);
             inscData.guardarInscripcion(i);
@@ -244,7 +244,7 @@ public class ManejoInscripciones extends javax.swing.JInternalFrame {
             Alumno a=(Alumno)cboxAlumno.getSelectedItem();
             int idMateria=(Integer)modelo.getValueAt(filaSeleccionada,0);
             
-            inscData.borrarInscripcion(a.getIdAlumno(), idMateria);
+            inscData.borrarInscripcion(idMateria, idMateria);
             borrarFilaTabla();
         }
     }//GEN-LAST:event_JBAnularActionPerformed
@@ -273,7 +273,7 @@ public class ManejoInscripciones extends javax.swing.JInternalFrame {
         }
     }
     
-    private void cargaDatosNoInscriptas(){
+    private void cargaDatosNoInscriptos(){
         
         Alumno selec =(Alumno)cboxAlumno.getSelectedItem(); 
         listaM = inscData.obtenerMateriasNoCursadas(selec.getIdAlumno()); 
