@@ -5,6 +5,7 @@ package universidadejemplo.Vistas;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.List;
 import universidadejemplo.AccesoADatos.AlumnoData;
 import universidadejemplo.AccesoADatos.Conexion;
 import universidadejemplo.AccesoADatos.InscripcionData;
@@ -60,9 +61,27 @@ public class Universidad {
      //id.borrarInscripcion(1, 2);
      
      
+     InscripcionData i= new InscripcionData(); 
+     
+     List<Inscripcion> obtenerInscIdAl= i.obtenerInscripcionesPorAlumno(3); 
+     if(obtenerInscIdAl != null){
+         for(int x = 0; x<obtenerInscIdAl.size(); x++ ){
+             
+             Inscripcion inscripcion1 = obtenerInscIdAl.get(x); 
+             System.out.println(inscripcion1.getMateria());
+             System.out.println(inscripcion1.getAlumno());
+             System.out.println(inscripcion1.getNota());
+
+           }
+         }else {
+           System.out.println("Lista nula");      
+       }
+         
+     } 
+     
+     
      
      
        
     }
     
-}

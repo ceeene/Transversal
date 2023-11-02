@@ -25,7 +25,6 @@ public class MenuG12 extends javax.swing.JFrame {
         JMINotas = new javax.swing.JMenuItem();
         JMConsultas = new javax.swing.JMenu();
         JMIListarXAlumno = new javax.swing.JMenuItem();
-        jMIListarXMateria = new javax.swing.JMenuItem();
         JMSalir = new javax.swing.JMenu();
         jMISalir = new javax.swing.JMenuItem();
 
@@ -104,15 +103,6 @@ public class MenuG12 extends javax.swing.JFrame {
         });
         JMConsultas.add(JMIListarXAlumno);
 
-        jMIListarXMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadejemplo/Vistas/imagenes/listar materias.png"))); // NOI18N
-        jMIListarXMateria.setText("Listar por Materia...");
-        jMIListarXMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMIListarXMateriaActionPerformed(evt);
-            }
-        });
-        JMConsultas.add(jMIListarXMateria);
-
         JMBOpc.add(JMConsultas);
 
         JMSalir.setText("Salir");
@@ -181,15 +171,6 @@ public class MenuG12 extends javax.swing.JFrame {
         escritorio.add(eem);
         escritorio.moveToFront(eem);
     }//GEN-LAST:event_JMIFormMateriaActionPerformed
-
-    private void jMIListarXMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIListarXMateriaActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
-        ListarPorMateria lpm=new ListarPorMateria();
-        lpm.setVisible(true);
-        escritorio.add(lpm);
-        escritorio.moveToFront(lpm);
-    }//GEN-LAST:event_jMIListarXMateriaActionPerformed
 
     private void JMIInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIInscripcionesActionPerformed
         escritorio.removeAll();
@@ -266,7 +247,6 @@ public class MenuG12 extends javax.swing.JFrame {
     private javax.swing.JMenu JMMateria;
     private javax.swing.JMenu JMSalir;
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenuItem jMIListarXMateria;
     private javax.swing.JMenuItem jMISalir;
     // End of variables declaration//GEN-END:variables
 

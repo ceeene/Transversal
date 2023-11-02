@@ -3,19 +3,25 @@ package universidadejemplo.Vistas;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import universidadejemplo.AccesoADatos.AlumnoData;
 import universidadejemplo.AccesoADatos.InscripcionData;
 import universidadejemplo.AccesoADatos.MateriaData;
 import universidadejemplo.Entidades.Alumno;
 import universidadejemplo.Entidades.Inscripcion;
+import universidadejemplo.Entidades.Materia;
 
 
 public class ManipulacionNotas extends javax.swing.JInternalFrame {
     
     private List<Alumno> listaA;
-    private List<Inscripcion> listaInscripcion;
+    private List<Materia> listaMateria;
+    private List<Inscripcion>listaInscripcion; 
     private DefaultTableModel modelo;
+    private Inscripcion insc= null; 
+    private Materia mat= null; 
+    InscripcionData notaActual; 
     private AlumnoData aData; 
     private InscripcionData inscData; 
     private MateriaData mData; 
@@ -27,40 +33,51 @@ public class ManipulacionNotas extends javax.swing.JInternalFrame {
         
         aData = new AlumnoData();
         listaA = aData.listarAlumnos();
-        modelo=new DefaultTableModel();
-        cargaAlumnos(); 
+        modelo=new DefaultTableModel(){
+
+            @Override
+            public boolean isCellEditable(int f, int c) {
+                if(c==2){
+                    return true;
+                }
+                return false; 
+            }
+
+        }; 
+        insc = new Inscripcion(); 
+        inscData= new InscripcionData(); 
+        mData= new MateriaData(); 
+        notaActual = new InscripcionData(); 
+        
         armarCabeceraTabla(); 
-        inscData = new InscripcionData(); 
-        mData = new MateriaData();
+        cargaAlumnos();
         
         
     }
 
     private void armarCabeceraTabla(){
-        ArrayList<Object> filaCab=new ArrayList<>();
-        filaCab.add("Codigo");
-        filaCab.add("Asignatura");
-        filaCab.add("Nota");
-        for (Object it: filaCab){
-            modelo.addColumn(it);
-        }
+       modelo.addColumn("Codigo");
+       modelo.addColumn("Nombre");
+       modelo.addColumn("Nota");
         JTMateria.setModel(modelo);
         
     }
     
-    private void borrarFila(){
-        int ind = modelo.getRowCount()-1;
-        for (int i =ind; i>=0;i--){
-            modelo.removeRow(i);
-        }
-        
-    }
+//    private void borrarFila(){
+//        int ind = modelo.getRowCount()-1;
+//        for (int i =ind; i>=0;i--){
+//            modelo.removeRow(i);
+//        }
+//        
+//    }
     
     private void cargaAlumnos(){
         for(Alumno item: listaA){
             JCBAlumno.addItem(item);
         }
     }
+    
+    
         
             @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -99,6 +116,11 @@ public class ManipulacionNotas extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(JTMateria);
 
         JBGuardar.setText("Guardar");
+        JBGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBGuardarActionPerformed(evt);
+            }
+        });
 
         JBSalir.setText("Salir");
         JBSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +188,8 @@ public class ManipulacionNotas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_JBSalirActionPerformed
 
     private void JCBAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBAlumnoActionPerformed
-       /* Alumno elegido= (Alumno)JCBAlumno.getSelectedItem();
+        borraFila(); 
+        Alumno elegido= (Alumno)JCBAlumno.getSelectedItem();
         listaInscripcion= inscData.obtenerInscripcionesPorAlumno(elegido.getIdAlumno());
         if(listaInscripcion.size()>0){
             for(Inscripcion insc:listaInscripcion){
@@ -176,10 +199,33 @@ public class ManipulacionNotas extends javax.swing.JInternalFrame {
                     insc.getNota()
                 });
             }
-        }*/
+        }    
     }//GEN-LAST:event_JCBAlumnoActionPerformed
 
+    private void JBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarActionPerformed
+         
+        int filasSelecc= JTMateria.getSelectedRow(); 
+        if(filasSelecc !=-1){
+           Alumno a= (Alumno) JCBAlumno.getSelectedItem(); 
+           int idMat= (Integer) modelo.getValueAt(filasSelecc, 0);
+           double nota = Double.parseDouble((String) modelo.getValueAt(filasSelecc, 2)); 
+           inscData.actualizarNota(a.getIdAlumno(), idMat, nota);
+        } else{
+            JOptionPane.showMessageDialog(this, "Debes seleccionar la materia parta actualizar la nota");
+        } 
+       
 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBGuardarActionPerformed
+
+     private void borraFila(){
+         int ind = modelo.getRowCount()-1; 
+         for(int i = ind; i>=0; i--){
+             modelo.removeRow(i);
+         }
+     }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBGuardar;
     private javax.swing.JButton JBSalir;
