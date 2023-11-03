@@ -17,6 +17,7 @@ import universidadejemplo.Entidades.Alumno;
 
 public class AlumnoData {
     private Connection con = null;
+    
 
  public AlumnoData() {
 

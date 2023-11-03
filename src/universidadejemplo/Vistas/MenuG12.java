@@ -1,12 +1,15 @@
 
 package universidadejemplo.Vistas;
 
+import javax.swing.table.DefaultTableModel;
+
 
 public class MenuG12 extends javax.swing.JFrame {
 
     
     public MenuG12() {
         initComponents();
+      
     }
 
     
@@ -148,7 +151,7 @@ public class MenuG12 extends javax.swing.JFrame {
     private void JMIListarXAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIListarXAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        ListarPorAlumno lpa=new ListarPorAlumno();
+        ConsultaDeAlumnosxMateria lpa=new ConsultaDeAlumnosxMateria();
         lpa.setVisible(true);
         escritorio.add(lpa);
         escritorio.moveToFront(lpa);
